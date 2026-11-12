@@ -22,6 +22,11 @@ void main() {
                 icon: Icons.skateboarding,
                 color: Colors.blueGrey,
               ),
+              NewWidget(
+                color: Colors.green,
+                icon: Icons.travel_explore,
+                title: 'Travelling',
+              ),
                 
                   
               
@@ -35,29 +40,35 @@ void main() {
 }
 
 class NewWidget extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final Color color;
+
   const NewWidget({
-    super.key, required MaterialColor color, required IconData icon, required String title,
+    super.key, required this.color, required this.icon, required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom:15),
       decoration: BoxDecoration ( 
-        color:Colors.green,
+        color:color,
         borderRadius:BorderRadius.circular(15), 
     
       ) , 
-      child: const Row(  
+      child:  Row(  
         children:[
           Icon(
-            Icons.travel_explore,
+            icon,
+            
             color: Colors.white,
           ),
-          SizedBox(width:20),
+          const SizedBox(width:20),
           Text(
-            'Travelling',
-            style: TextStyle( 
+            title,
+            style: const TextStyle( 
               color: Colors.white,
               fontSize:30,
             ),

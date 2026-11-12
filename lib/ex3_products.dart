@@ -10,7 +10,48 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Container(), // YOUR CODE
+        body: Container(
+          color: Colors.grey.shade200,
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children:[ 
+              Card(  
+                child:Column(  
+                  children:[ 
+                    Image.asset(
+                      'assets/ex3/dart.png',
+                      height:150,
+                    ),
+                    const Padding(  
+                      padding: EdgeInsets.all(10),
+                      child:Text(  
+                        'Dart',
+                        style: TextStyle( 
+                          fontSize:24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(10),
+                      child:Text(  
+                        'Dart is a programing language'
+                        'used to build applications',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+
+                  ],
+                ),
+              ) ,
+
+            ] ,
+
+          ),
+
+        ), // YOUR CODE
       ),
     ),
   );
